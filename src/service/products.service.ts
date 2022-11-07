@@ -9,6 +9,11 @@ class AddProduct {
     const products = await this.model.create(product);
     return products;
   }
+
+  public async getAll(): Promise<ProductInterface[]> {
+    const products = await this.model.getAll();
+    return products as ProductInterface[];
+  }
 }
 
 // [sala ][trybe-smith][req 01] - 

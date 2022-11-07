@@ -17,6 +17,14 @@ class ProductsModel {
     );
     return { id: insertId, ...product };
   }
+
+  public async getAll(): Promise<ProductInterface[]> {
+    const [selected] = await this.connection
+      .execute(
+        'SELECT * FROM Trybesmith.Products',
+      );
+    return selected as ProductInterface[];
+  }
 }
 
 export default ProductsModel;
