@@ -12,3 +12,9 @@ export interface UserInterface {
   level: number;
   password: string;
 }
+
+export interface OrderInterface {
+  id: number;
+  userId: number;
+  productsIds?: number[];
+}
